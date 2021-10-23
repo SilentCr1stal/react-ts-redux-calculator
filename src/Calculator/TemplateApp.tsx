@@ -1,11 +1,8 @@
-import React, { ReactNode, useState } from "react";
+import React, { Dispatch, ReactNode, useState } from "react";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { CalculateNumberButton } from "./CalculateNumberButton";
 import CalculationsScreen from "./CalculatuonsScreen";
 import HeaderTemplateApp from "./HeaderTemplateApp";
-
-interface ITemplateApp {
-  isWhiteThemeColor: boolean;
-}
 
 type Object<T> = {
   classNames: Array<string>;
@@ -22,9 +19,7 @@ export const operationButtons: Array<string | JSX.Element | number> = [
   "=",
 ];
 
-const TemplateApp: React.FunctionComponent<ITemplateApp> = ({
-  isWhiteThemeColor,
-}): JSX.Element => {
+const TemplateApp: React.FunctionComponent = (): JSX.Element => {
   const [solution, setSolution] = useState<string>("0");
 
   const contentButtons: Object<Array<string | JSX.Element | number>> = {
@@ -74,7 +69,9 @@ const TemplateApp: React.FunctionComponent<ITemplateApp> = ({
     ],
     types: ["number", "operation", "additional_btn"],
   };
-
+  const isWhiteThemeColor: boolean | any = useSelector<RootStateOrAny>(
+    (state) => state.theme.isWhiteThemeColor
+  )
   return (
     <React.Fragment>
       <div
@@ -82,7 +79,7 @@ const TemplateApp: React.FunctionComponent<ITemplateApp> = ({
           isWhiteThemeColor ? "bg-white-900" : "bg-black-700"
         } calc-template p-4`}
       >
-        <HeaderTemplateApp themeApp={isWhiteThemeColor} />
+        <HeaderTemplateApp/>
         <main
           className="main-screen__calculations 
         py-2 flex items-center justify-end"

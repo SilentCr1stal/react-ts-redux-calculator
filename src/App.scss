@@ -62,7 +62,6 @@ $appButtonNumberSize: 59.5px;
           min-height: 24px;
         }
         .screen__output-numbers {
-          color: $appBigNumberOnScreenColor;
           font-size: 48px;
           font-weight: 500;
         }
@@ -86,6 +85,15 @@ $appButtonNumberSize: 59.5px;
         }
         .number-button {
           font-size: 26px;
+        }
+        &.dark[data-type=operation] {
+          background-color: #ebebeb;
+        }
+        &.dark[data-type=additional_btn] {
+          color: $appThemeWhiteColor;
+        }
+        &.dark[data-type=additional_btn]:nth-child(1), &.dark[data-type=additional_btn]:nth-child(2) {
+          background-color: $appAdditionalButtonColor;
         }
       }
     }

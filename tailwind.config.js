@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     fontSize: {
       'icons-tiny': '20px'
+    },
+    colors: {
+      'light': '#ffffff',
+      'dark': '#171717'
     }
   },
   variants: {

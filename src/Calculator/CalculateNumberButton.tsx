@@ -1,6 +1,5 @@
 import React, { Dispatch } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { IValue } from "../index";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { operationButtons } from "./TemplateApp";
 import { getSolution } from "./utils";
 
@@ -18,8 +17,11 @@ export const CalculateNumberButton: React.FunctionComponent<IButtonNumbers> = ({
   setSolution,
 }): React.ReactElement => {
   const dispatch: Dispatch<object> = useDispatch<Dispatch<object>>();
-  const value: string | any = useSelector<IValue>(
-    (state: IValue): string => state.value
+  const isWhiteThemeColor: boolean | any = useSelector<RootStateOrAny>(
+    (state) => state.theme.isWhiteThemeColor
+  );
+  const value: any = useSelector<RootStateOrAny>(
+    (state) => state.solution.value
   );
 
   const print: Function = (symbol: string): void => {
@@ -80,7 +82,9 @@ export const CalculateNumberButton: React.FunctionComponent<IButtonNumbers> = ({
     <React.Fragment>
       <div
         className={`numbers__buttons__button number-button-${className} 
-        flex justify-center items-center`}
+        flex justify-center items-center ${
+          isWhiteThemeColor ? "light" : "dark"
+        }`}
         data-type={type}
         onClick={(event): void => {
           const type: string = event.currentTarget.dataset["type"]!;

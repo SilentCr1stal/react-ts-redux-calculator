@@ -46,7 +46,6 @@
   min-height: 24px; }
 
 .calc-template .main-screen__calculations .screen__inner-block .screen__place-calculate .screen__output-numbers {
-  color: #171717;
   font-size: 48px;
   font-weight: 500; }
 
@@ -66,3 +65,12 @@
 
 .calc-template .wrapper__numbers__buttons .numbers__buttons__button .number-button {
   font-size: 26px; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button.dark[data-type=operation] {
+  background-color: #ebebeb; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button.dark[data-type=additional_btn] {
+  color: #ffffff; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button.dark[data-type=additional_btn]:nth-child(1), .calc-template .wrapper__numbers__buttons .numbers__buttons__button.dark[data-type=additional_btn]:nth-child(2) {
+  background-color: #747377; }

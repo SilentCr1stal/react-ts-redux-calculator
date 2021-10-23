@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { IValue } from "../index";
+import { RootStateOrAny, useSelector } from "react-redux";
 
 interface ICalculationScreen {
   solution: string;
@@ -9,9 +8,12 @@ interface ICalculationScreen {
 const CalculationsScreen: React.FunctionComponent<ICalculationScreen> = ({
   solution,
 }): JSX.Element => {
-  const expression: string | any = useSelector<IValue>(
-    (state: IValue): string => state.value
+  const expression: string | any = useSelector<RootStateOrAny>(
+    (state) => state.solution.value
   );
+  const isWhiteThemeColor: boolean | any = useSelector<RootStateOrAny>(
+    (state) => state.theme.isWhiteThemeColor
+  )
   return (
     <React.Fragment>
       <div className="screen__inner-block">
@@ -19,7 +21,9 @@ const CalculationsScreen: React.FunctionComponent<ICalculationScreen> = ({
           <div className="screen__entered-numbers screen__numbers">
             {expression}
           </div>
-          <div className="screen__output-numbers screen__numbers">
+          <div className={`screen__output-numbers screen__numbers ${
+                  isWhiteThemeColor ? "text-dark" : "text-light"
+                }`}>
             {solution}
           </div>
         </div>
