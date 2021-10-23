@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TemplateApp from "./Calculator/TemplateApp";
 
-function App() {
+/**
+ *
+ * @return {JSX.Element}
+ */
+function App(): JSX.Element {
+  const isWhiteThemeColor = true;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="app__wrapper flex justify-center items-center">
+        <TemplateApp isWhiteThemeColor={isWhiteThemeColor} />
+      </div>
+    </React.Fragment>
   );
 }
 

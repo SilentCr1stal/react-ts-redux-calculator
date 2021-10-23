@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
-}
+.calc-template::before, .calc-template::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.app,
+.app .app__wrapper {
+  height: inherit; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.calc-template {
+  max-width: 300px;
+  width: 100%;
+  height: 550px;
+  box-shadow: 0 0 30px 0px #00000099;
+  border-radius: 50px;
+  position: relative;
+  z-index: 10; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.calc-template::before, .calc-template::after {
+  width: 60%;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 -4px 15px 0px #00000055;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5%;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px; }
 
-.App-link {
-  color: #61dafb;
-}
+.calc-template::after {
+  box-shadow: 0 25px 10px 0px #f5f5f5;
+  height: 50px;
+  border-radius: 15px;
+  top: -61px;
+  width: 56%; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.calc-template .main-screen__calculations {
+  height: 160px; }
+
+.calc-template .main-screen__calculations .screen__inner-block .screen__place-calculate .screen__numbers {
+  text-align: right; }
+
+.calc-template .main-screen__calculations .screen__inner-block .screen__place-calculate .screen__entered-numbers {
+  color: #dad2d2;
+  letter-spacing: 1.5px;
+  min-height: 24px; }
+
+.calc-template .main-screen__calculations .screen__inner-block .screen__place-calculate .screen__output-numbers {
+  color: #171717;
+  font-size: 48px;
+  font-weight: 500; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button {
+  width: 59.5px;
+  height: 59.5px;
+  border-radius: 50%; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button[data-type=number] {
+  color: #c3c3c3; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button[data-type=operation] {
+  color: #01bea5; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button[data-type=additional_btn] {
+  color: #747377; }
+
+.calc-template .wrapper__numbers__buttons .numbers__buttons__button .number-button {
+  font-size: 26px; }

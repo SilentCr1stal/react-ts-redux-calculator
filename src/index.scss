@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "normalize.css";
+
+$body-bgColor: #F5F5F5;
+$bgColorWhiteTheme: #FFFFFF;
+$bgColorBlackTheme: #283637;
+$body-greenCircleColor: #009788;
+$body-blackCircleColor: #283637;
+
+.bg-white-900 {
+  background-color: $bgColorWhiteTheme;
+}
+.bg-black-700 {
+  background-color: $bgColorBlackTheme;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background-color: $body-bgColor;
+  position: relative;
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    height: 30vw;
+    width: 30vw;
+  }
+  &::before {
+    background-color: $body-greenCircleColor;
+    top: 0;
+    right: 0;
+    clip-path: circle(78.4% at 93% 4%);
+  }
+  &::after {
+    background-color: $body-blackCircleColor;
+    bottom: 0;
+    left: 0;
+    clip-path: circle(66.8% at 6% 97%);
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
