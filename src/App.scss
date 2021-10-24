@@ -15,7 +15,9 @@ $appButtonNumberSize: 59.5px;
   top: 0;
   left: 0;
 }
-
+* {
+  transition: 5s all;
+}
 .app {
   &,
   .app__wrapper {
